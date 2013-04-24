@@ -37,11 +37,11 @@ namespace dotcmis_issue632
             // Update a document twice.
             string remoteFilePath = "/User Homes/test.txt";
             Document doc = (Document)session.GetObjectByPath(remoteFilePath);
-            UpdateFile(doc);
-            UpdateFile(doc); // This one never returns. 
+            Update(doc);
+            Update(doc); // This one never returns. 
         }
 
-        private static void UpdateFile(IDocument doc)
+        private static void Update(IDocument doc)
         {
             Stream data = File.OpenRead("../../local.txt");
 
