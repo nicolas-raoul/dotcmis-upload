@@ -9,7 +9,8 @@ using System.IO;
 using DotCMIS.Data.Impl;
 
 /**
- * Code showing DotCMIS issue 632.
+ * Code demonstrating DotCMIS issue 632.
+ * Modify AtomPubUrl, User, Password, remoteFilePath
  * Output:
  * 
  * before
@@ -27,14 +28,15 @@ namespace dotcmis_issue632
             // Create session.
             var parameters = new Dictionary<string, string>();
             parameters[SessionParameter.BindingType] = BindingType.AtomPub;
-            parameters[SessionParameter.AtomPubUrl] = "http://192.168.0.22:8080/alfresco/cmisatom";
-            parameters[SessionParameter.User] = "admin";
-            parameters[SessionParameter.Password] = "admin";
+            parameters[SessionParameter.AtomPubUrl] = "http://192.168.0.22:8080/alfresco/cmisatom"; // MODIFY HERE
+            parameters[SessionParameter.User] = "admin"; // MODIFY HERE
+            parameters[SessionParameter.Password] = "admin"; // MODIFY HERE
             var factory = SessionFactory.NewInstance();
             ISession session = factory.GetRepositories(parameters)[0].CreateSession();
 
             // Update a document twice.
-            Document doc = (Document)session.GetObjectByPath("/User Homes/test.txt");
+            string remoteFilePath = "/User Homes/test.txt";
+            Document doc = (Document)session.GetObjectByPath(remoteFilePath);
             UpdateFile(doc);
             UpdateFile(doc); // This one never returns. 
         }
