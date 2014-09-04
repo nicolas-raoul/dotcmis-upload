@@ -19,7 +19,7 @@ using DotCMIS.Data.Impl;
  * [program gets stuck here]
  *
  */
-namespace dotcmis_issue632
+namespace dotcmis_upload
 {
     class Program
     {

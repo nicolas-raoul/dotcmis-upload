@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotcmis-issue632", "dotcmis-issue632\dotcmis-issue632.csproj", "{754F34B0-522D-41A8-AD94-C342BDD7F16F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotcmis-upload", "dotcmis-upload\dotcmis-upload.csproj", "{754F34B0-522D-41A8-AD94-C342BDD7F16F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

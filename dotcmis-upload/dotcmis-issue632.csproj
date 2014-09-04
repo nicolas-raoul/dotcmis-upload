@@ -8,8 +8,8 @@
     <ProjectGuid>{754F34B0-522D-41A8-AD94-C342BDD7F16F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>dotcmis_issue632</RootNamespace>
-    <AssemblyName>dotcmis-issue632</AssemblyName>
+    <RootNamespace>dotcmis_upload</RootNamespace>
+    <AssemblyName>dotcmis-upload</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
