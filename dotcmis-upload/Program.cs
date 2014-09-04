@@ -12,6 +12,7 @@ using DotCMIS.Data.Impl;
  * Upload documents to a CMIS server using DotCMIS.
  */
 using System.Threading;
+using DotCMIS.Exceptions;
 
 
 namespace dotcmis_upload
@@ -33,7 +34,16 @@ namespace dotcmis_upload
 
 			while (true)
 			{
-				UploadRandomDocumentTo(folder);
+				try
+				{
+					UploadRandomDocumentTo(folder);
+				}
+				catch(CmisConnectionException e)
+				{
+					Console.WriteLine ();
+					Console.WriteLine (e.Message);
+					Console.WriteLine ();
+				}
 				Thread.Sleep(1000);
 			}
         }
@@ -58,12 +68,12 @@ namespace dotcmis_upload
 			contentStream.Length = data.Length;
 			contentStream.Stream = new MemoryStream(data);
 
-			IDocument doc = folder.CreateDocument(properties, contentStream, null);
+			Console.Write("Uploading " + filename + " ... ");
+			folder.CreateDocument(properties, contentStream, null);
+			Console.WriteLine(" Done.");
 
 			contentStream.Stream.Close();
 			contentStream.Stream.Dispose();
-
-			Console.WriteLine ("Uploaded " + filename);
         }
     }
 }
