@@ -53,7 +53,7 @@ namespace dotcmis_upload
 			string filename = "file_" + Guid.NewGuid() + ".bin";
 
 			//byte[] content = UTF8Encoding.UTF8.GetBytes("Hello World!");
-			int sizeInMb = 4;
+			int sizeInMb = 40;
 			byte[] data = new byte[sizeInMb * 1024 * 1024];
 			Random rng = new Random();
 			rng.NextBytes(data);
